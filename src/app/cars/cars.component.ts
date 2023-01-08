@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../_model/car';
+import { CARS } from '../_model/mock-cars';
 
 @Component({
   selector: 'app-cars',
@@ -8,14 +9,16 @@ import { Car } from '../_model/car';
 })
 export class CarsComponent implements OnInit {
 
-  car: Car = {
-    id: 1,
-    name: 'Toyota'
-  };
+  cars = CARS;
+  selectedCar?: Car;
 
   constructor() { }
 
   ngOnInit(): void {
 
+  }
+  
+  onSelect(car: Car): void {
+    this.selectedCar = car;
   }
 }

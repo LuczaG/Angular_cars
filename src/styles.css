@@ -3,19 +3,16 @@ h1 {
     color: rgb(8, 130, 251);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 250%;
-    text-align: center; 
 }
 
 h2, h3 {
     color: rgb(246, 2, 2);
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    text-align: center; 
+    font-weight: lighter; 
   }
 
   div {
     color:rgb(246, 2, 2);
-    text-align: center;
   }
 
   body {
