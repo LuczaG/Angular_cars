@@ -1,5 +1,5 @@
 <div *ngIf="car">
-    <h2>{{car.name | uppercase}} Details</h2>
+    <h2>{{car.name | uppercase}} {{car.year}} Details</h2>
     <div><span>id: </span>{{car.id}}</div>
     <div>
       <label for="car-name">Name: </label>
@@ -7,4 +7,5 @@
       <label for="car-year">Year: </label>
       <input id="car-year" [(ngModel)]="car.year" placeholder="year">
     </div>
+    <button type="button" (click)="goBack()">go back</button>
   </div>
