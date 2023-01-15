@@ -3,6 +3,17 @@
 h2 {
     text-align: center;
   }
+
+  .cars-form {
+    padding: 10px;
+    margin: auto;
+    max-width: 1000px;
+    text-align: center;
+  }
+
+  .btn {
+    margin-left: 10px;
+  }
   
   .cars-menu {
     padding: 0;

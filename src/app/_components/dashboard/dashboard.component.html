@@ -1,7 +1,19 @@
+<h2>Add a Car</h2>
+<form class="cars-form" [formGroup]="carForm" (ngSubmit)="onSumbit()">
+  <label for="">
+    Car Name:
+    <input type="text" formControlName="carName">
+    Car Year:
+    <input type="number" formControlName="carYear">
+  </label>
+
+  <button type="submit" class="btn" [disabled]="!carForm.valid">Save</button>
+</form>
+
 <h2>Top Cars</h2>
-<div class="cars-menu">
-  <a *ngFor="let car of cars" routerLink="/detail/{{car.id}}">
-    {{car.name}}
-    {{car.year}}
+<div *ngIf="cars" class="cars-menu">
+  <a *ngFor="let car of cars" 
+    routerLink="/detail/{{car.id}}">
+    {{car.name}} {{car.year}}
   </a>
 </div>

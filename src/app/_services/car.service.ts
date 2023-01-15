@@ -1,28 +1,28 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Car, CARS } from '@app/_models';
-import { MessageService } from '@app/_services/message.service';
+import { Car } from '@app/_models';
+import { environment } from 'src/environments/environment';
+
+const httpOption = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class CarService {
 
-  constructor(private messageService: MessageService) { }
+  constructor(private http: HttpClient) { }
 
-  getCars(): Observable<Car[]> {
-    const cars = of(CARS);
-    this.messageService.add('CarService: fetched cars');
-    return cars;
+  getAllCars() {
+    return this.http.get<Car[]>(`${environment.apiUrl}/cars`, httpOption);
   }
 
-  getCar(id: number): Observable<Car> {
-    // For now, assume that a hero with the specified `id` always exists.
-    // Error handling will be added in the next step of the tutorial.
-    const car = CARS.find(c => c.id === id)!;
-    this.messageService.add(`CarService: fetched car id=${id}`);
-    return of(car);
+  getCarById(carId: Number) {
+    return this.http.get<Car>(`${environment.apiUrl}/cars/${carId}`, httpOption);
   }
 
+  addCar(car: Car) {
+    return this.http.post<Car>(`${environment.apiUrl}/cars`, car, httpOption);
+  }
 }
-

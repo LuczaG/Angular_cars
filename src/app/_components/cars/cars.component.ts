@@ -19,7 +19,7 @@ export class CarsComponent implements OnInit {
 
 
   getCars(): void {
-    this.carService.getCars()
-      .subscribe(cars => this.cars = cars);
+    this.carService.getAllCars()
+      .subscribe(data => this.cars = data);
   }
 }
