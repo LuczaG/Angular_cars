@@ -11,7 +11,7 @@ import { Car } from '@app/_models';
 })
 export class CarDetailComponent implements OnInit {
   
-  car: Car | undefined
+  car!: Car;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,6 +30,20 @@ export class CarDetailComponent implements OnInit {
         console.log(car);
         this.car = car;
       });
+  }
+
+  save(): void {
+    this.carService.updateCar(this.car).subscribe(
+      () => this.goBack()
+    );
+  }
+
+  delete(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    confirm("Are you sure you want to delete this car?")
+    ? this.carService.deleteCar(id).subscribe(
+      () => this.goBack()) 
+    :"";
   }
 
   goBack(): void {

@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CarsComponent, CarDetailComponent, DashboardComponent } from './_components';
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './_components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     CarsComponent,
     CarDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

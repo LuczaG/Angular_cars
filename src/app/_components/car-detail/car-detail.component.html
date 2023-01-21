@@ -1,11 +1,13 @@
 <div *ngIf="car">
-    <h2>{{car.name | uppercase}} {{car.year}} Details</h2>
-    <div><span>id: </span>{{car.id}}</div>
-    <div>
-      <label for="car-name">Name: </label>
-      <input id="car-name" [(ngModel)]="car.name" placeholder="name">
-      <label for="car-year">Year: </label>
-      <input id="car-year" [(ngModel)]="car.year" placeholder="year">
-    </div>
+  <h2>{{car.name | uppercase}} {{car.year}} Details</h2>
+  <div><span>id: </span>{{car.id}}</div>
+  <div>
+    <label for="car-name">Name: </label>
+    <input id="car-name" [(ngModel)]="car.name" placeholder="name">
+    <label for="car-year">Year: </label>
+    <input id="car-year" [(ngModel)]="car.year" placeholder="year">
   </div>
-  <button type="button" (click)="goBack()">go back</button>
+  <button (click)="save()">Save</button>
+  <button (click)="delete()">Delete</button>
+  <button type="button" (click)="goBack()">Go back</button>
+</div>

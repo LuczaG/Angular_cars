@@ -2,7 +2,7 @@
   "cars": [
     {
       "name": "Toyota",
-      "year": 2018,
+      "year": "2019",
       "id": 1
     },
     {
@@ -53,11 +53,6 @@
     {
       "name": "Mercedes",
       "year": 2005,
-      "id": 11
-    },
-    {
-      "name": "Mercedes",
-      "year": 2005,
       "id": 12
     },
     {
@@ -74,11 +69,6 @@
       "name": "Ford",
       "year": 1998,
       "id": 15
-    },
-    {
-      "name": "Jaguar",
-      "year": 1999,
-      "id": 16
     }
   ]
 }
