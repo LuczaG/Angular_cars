@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
   createCarForm() {
     this.carForm = this.fb.group({
       carName: ['', Validators.required],
-      carYear: [ , Validators.minLength]
+      carYear: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.maxLength(4)]]
     });
   }
 
